@@ -14,7 +14,7 @@ public class ConnectDB {
 			Connection connection = DriverManager.getConnection(jdbcUrl);
 			return connection;
 		} catch (SQLException e) {
-			System.err.println("Errore nella connessione!");
+			System.err.println("Errore nella connessione in ConnectDB!");
 			e.printStackTrace();
 			throw new RuntimeException("Cannot get a connection " + jdbcUrl, e);
 		}

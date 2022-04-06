@@ -1,5 +1,6 @@
 package it.polito.tdp.anagrammi;
 
+import java.awt.Color;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Set;
@@ -39,6 +40,12 @@ public class FXMLController {
     	txtAnagrammiErrati.clear();
     	
     	String parola = txtParola.getText();
+    	if(parola.length() > 7) {
+    		txtAnagrammiCorretti.setText("Inserire una parola con meno di 8 caratteri!");
+    		txtAnagrammiErrati.setText("Inserire una parola con meno di 8 caratteri!");
+    		return;
+    	}
+    	
     	model.anagramma(parola);
     	Set<String> corretti = model.getCorretti();
     	Set<String> errati = model.getErrati();
